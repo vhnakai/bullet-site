@@ -239,13 +239,9 @@ function CoachContext() {
               único. Procuro ajudar a pessoa pela pessoa, ou seja, você já tem
               todas as ferramentas para conseguir atingir o seu objetivo, cabe a
               mim ajudar a mostrar o caminho e mostrar para você quais são elas,
-              respeitando sempre o cliente e sua singularidade existencial.
-            </p>
-            <br />
-            <p>
-              Não existe fórmula mágica universal, o que existe é uma proposta
-              de entendimento e compreensão que irá se aplicar somente ao
-              cliente.
+              respeitando sempre o cliente e sua singularidade existencial. Não
+              existe fórmula mágica universal, o que existe é uma proposta de
+              entendimento e compreensão que irá se aplicar somente ao cliente.
             </p>
             <br />
             <b>Lembre-se</b>: Coach não é terapia, é uma ferramenta para ajudar
@@ -264,6 +260,62 @@ function CoachContext() {
   );
 }
 
+function FilosofiaContext() {
+  return (
+    <Stack
+      id="filosofia"
+      minH={"100vh"}
+      direction={{ base: "column", md: "row" }}
+    >
+      <Flex flex={1}>
+        <Image
+          alt={"estatua de Dante Alighieri, filosofo italiano."}
+          objectFit={"cover"}
+          src={"./rHOEmsbV_2x.jpg"}
+        />
+      </Flex>
+      <Flex p={8} m={4} flex={1} align={"center"} justify={"center"}>
+        <Stack spacing={8} w={"full"} maxW={"lg"}>
+          <Heading fontSize={{ base: "3xl", md: "4xl" }}>
+            <Text as={"span"} position={"relative"} color={"#4F351E"}>
+              FILOSOFIA CLÍNICA
+            </Text>
+          </Heading>
+          <Text
+            fontSize={{ base: "md", lg: "lg" }}
+            color={"#1E1E1E"}
+            textAlign={"justify"}
+            as="p"
+            textIndent={20}
+          >
+            <p>
+              A Filosofia Clínica é uma abordagem terapêutica idealizada e
+              sistematizada pelo filósofo Lúcio Packter, que faz uso dos
+              conhecimentos filosóficos, ou seja, dos conhecimentos da Filosofia
+              Acadêmica teórica e os guia para o seu uso na terapia prática. A
+              Filosofia Clínica dita uma atitude filosófica do terapeuta que
+              leva em conta toda a bagagem de ensinamentos dos filósofos
+              consagrados ao longo da história.
+            </p>
+            <br />
+            <p>
+              Importante salientar que a Filosofia Clínica não faz uso de
+              jargões tipológicos e se afasta de conceitos como “doença”,
+              “cura”, “normal”, “diferente”, dentre outros. Se cada um é
+              singular em sua existência é normal que enxerguemos a
+              singularidade existencial em cada um. Não existem duas pessoas
+              iguais. Desse modo é difícil encarar, com um fundamento baseado na
+              epistemologia, conceitos como “normal” e “diferente”, por exemplo.
+              Cada pessoa é única em sua singularidade, em suas experiências,
+              representações do mundo e na forma como desenvolve suas questões.
+            </p>
+          </Text>
+        </Stack>
+      </Flex>
+    </Stack>
+  );
+}
+
 const HOME = () => {
   return (
     <>
@@ -275,6 +327,7 @@ const HOME = () => {
       <Hero />
       <AboutMe />
       <CoachContext />
+      <FilosofiaContext />
     </>
   );
 };
@@ -368,8 +421,12 @@ const NAV_ITEMS = [
     href: "#sobre",
   },
   {
-    label: "COACH&FILOSOFIA CLÍNICA",
+    label: "COACH",
     href: "#coach",
+  },
+  {
+    label: "FILOSOFIA CLÍNICA",
+    href: "#filosofia",
   },
 ];
 
