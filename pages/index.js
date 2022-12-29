@@ -21,7 +21,7 @@ import {
   Img,
 } from "@chakra-ui/react";
 
-const vector = "./Vector.svg";
+//const vector = () => <Image src={"./Vector.svg"} width={280} height={60} />;
 
 const HOME = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -66,12 +66,7 @@ const HOME = () => {
             flex={{ base: 1 }}
             justify={{ base: "center", md: "space-between" }}
           >
-            <Image
-              src={vector}
-              width={280}
-              height={60}
-            />
-
+            <Img src="./Vector.svg" />
             <Flex display={{ base: "none", md: "flex" }} ml={10}>
               <DesktopNav />
             </Flex>
@@ -119,9 +114,8 @@ const DesktopNav = () => {
         <Box
           key={navItem.label}
           display={"flex"}
-          alignItems={'center'}
-          justifyContent={'center'}
-          
+          alignItems={"center"}
+          justifyContent={"center"}
           border={3}
           borderBottomStyle={"solid"}
           borderColor={"transparent"}
@@ -153,7 +147,6 @@ const DesktopNav = () => {
   );
 };
 
-
 const MobileNav = () => {
   return (
     <Stack
@@ -183,10 +176,7 @@ const MobileNavItem = ({ label, children, href }) => {
           textDecoration: "none",
         }}
       >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue("#4F351E", "gray.200")}
-        >
+        <Text fontWeight={600} color={useColorModeValue("#4F351E", "gray.200")}>
           {label}
         </Text>
       </Flex>
