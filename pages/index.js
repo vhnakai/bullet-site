@@ -226,24 +226,36 @@ function CoachContext() {
             as="p"
             textIndent={20}
           >
-            <p>
-              O Coach age como uma ponte entre a pessoa e as ferramentas a sua
-              disposição com o objetivo de facilitar, através de um método, na
-              descoberta e melhoria do cliente para que ele atinja seu objetivo,
-              que podem ser diversos.
-            </p>
-            <br />
-            <p>
-              O método que eu utilizo une os conhecimentos pertinentes da
-              Filosofia Clínica com a metodologia do Coach, o que faz isso algo
-              único. Procuro ajudar a pessoa pela pessoa, ou seja, você já tem
-              todas as ferramentas para conseguir atingir o seu objetivo, cabe a
-              mim ajudar a mostrar o caminho e mostrar para você quais são elas,
-              respeitando sempre o cliente e sua singularidade existencial. Não
-              existe fórmula mágica universal, o que existe é uma proposta de
-              entendimento e compreensão que irá se aplicar somente ao cliente.
-            </p>
-            <br />
+            O Coach age como uma ponte entre a pessoa e as ferramentas a sua
+            disposição com o objetivo de facilitar, através de um método, na
+            descoberta e melhoria do cliente para que ele atinja seu objetivo,
+            que podem ser diversos.
+          </Text>
+
+          <Text
+            fontSize={{ base: "md", lg: "lg" }}
+            color={"#1E1E1E"}
+            textAlign={"justify"}
+            as="p"
+            textIndent={20}
+          >
+            O método que eu utilizo une os conhecimentos pertinentes da
+            Filosofia Clínica com a metodologia do Coach, o que faz isso algo
+            único. Procuro ajudar a pessoa pela pessoa, ou seja, você já tem
+            todas as ferramentas para conseguir atingir o seu objetivo, cabe a
+            mim ajudar a mostrar o caminho e mostrar para você quais são elas,
+            respeitando sempre o cliente e sua singularidade existencial. Não
+            existe fórmula mágica universal, o que existe é uma proposta de
+            entendimento e compreensão que irá se aplicar somente ao cliente.
+          </Text>
+
+          <Text
+            fontSize={{ base: "md", lg: "lg" }}
+            color={"#1E1E1E"}
+            textAlign={"justify"}
+            as="p"
+            textIndent={20}
+          >
             <b>Lembre-se</b>: Coach não é terapia, é uma ferramenta para ajudar
             com problemas pontuais.
           </Text>
@@ -288,27 +300,30 @@ function FilosofiaContext() {
             as="p"
             textIndent={20}
           >
-            <p>
-              A Filosofia Clínica é uma abordagem terapêutica idealizada e
-              sistematizada pelo filósofo Lúcio Packter, que faz uso dos
-              conhecimentos filosóficos, ou seja, dos conhecimentos da Filosofia
-              Acadêmica teórica e os guia para o seu uso na terapia prática. A
-              Filosofia Clínica dita uma atitude filosófica do terapeuta que
-              leva em conta toda a bagagem de ensinamentos dos filósofos
-              consagrados ao longo da história.
-            </p>
-            <br />
-            <p>
-              Importante salientar que a Filosofia Clínica não faz uso de
-              jargões tipológicos e se afasta de conceitos como “doença”,
-              “cura”, “normal”, “diferente”, dentre outros. Se cada um é
-              singular em sua existência é normal que enxerguemos a
-              singularidade existencial em cada um. Não existem duas pessoas
-              iguais. Desse modo é difícil encarar, com um fundamento baseado na
-              epistemologia, conceitos como “normal” e “diferente”, por exemplo.
-              Cada pessoa é única em sua singularidade, em suas experiências,
-              representações do mundo e na forma como desenvolve suas questões.
-            </p>
+            A Filosofia Clínica é uma abordagem terapêutica idealizada e
+            sistematizada pelo filósofo Lúcio Packter, que faz uso dos
+            conhecimentos filosóficos, ou seja, dos conhecimentos da Filosofia
+            Acadêmica teórica e os guia para o seu uso na terapia prática. A
+            Filosofia Clínica dita uma atitude filosófica do terapeuta que leva
+            em conta toda a bagagem de ensinamentos dos filósofos consagrados ao
+            longo da história.
+          </Text>
+          <Text
+            fontSize={{ base: "md", lg: "lg" }}
+            color={"#1E1E1E"}
+            textAlign={"justify"}
+            as="p"
+            textIndent={20}
+          >
+            Importante salientar que a Filosofia Clínica não faz uso de jargões
+            tipológicos e se afasta de conceitos como “doença”, “cura”,
+            “normal”, “diferente”, dentre outros. Se cada um é singular em sua
+            existência é normal que enxerguemos a singularidade existencial em
+            cada um. Não existem duas pessoas iguais. Desse modo é difícil
+            encarar, com um fundamento baseado na epistemologia, conceitos como
+            “normal” e “diferente”, por exemplo. Cada pessoa é única em sua
+            singularidade, em suas experiências, representações do mundo e na
+            forma como desenvolve suas questões.
           </Text>
         </Stack>
       </Flex>
@@ -355,6 +370,7 @@ const DesktopNav = () => {
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link
+                as='a'
                 m={5}
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}

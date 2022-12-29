@@ -1,17 +1,26 @@
+html {
+  overflow-x: scroll;
+  scroll-behavior: smooth!important;
+}
+
 
 html,
-body {
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+body { 
   padding: 0;
   margin: 0;
   font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  
+    overscroll-behavior-x: contain;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:link { 
+  scroll-behavior: auto !important;
 }
 
 * {
