@@ -7,6 +7,44 @@
   align-items: center;
 }
 
+.menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menuContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+
+.logo{
+
+}
+
+.about{
+
+}
+
+.aboutImage{
+
+}
+
+.myjob{
+
+}
+
+.contact{
+
+}
+
+
+
+
+
 .title a {
   color: #0070f3;
   text-decoration: none;

@@ -1,115 +1,212 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css';
+import Head from "next/head";
+import Image from "next/image";
 
-export default function Home() {
+import {
+  Box,
+  Flex,
+  Text,
+  IconButton,
+  Button,
+  Stack,
+  Collapse,
+  Icon,
+  Link,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  useColorModeValue,
+  useBreakpointValue,
+  useDisclosure,
+  Heading,
+  Img,
+} from "@chakra-ui/react";
+
+const vector = "./Vector.svg";
+
+const HOME = () => {
+  const { isOpen, onToggle } = useDisclosure();
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Ivan Za</title>
       </Head>
-
-      <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Box mt={8}>
+        <Flex
+          bg={"white"}
+          color={"#4F351E"}
+          minH={"60px"}
+          py={{ base: 2 }}
+          px={{ base: 4 }}
+          align={"center"}
+          m={8}
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
-      </footer>
+          <Flex
+            flex={{ base: 1, md: "auto" }}
+            ml={{ base: -2 }}
+            display={{ base: "flex", md: "none" }}
+          >
+            <IconButton
+              onClick={onToggle}
+              icon={
+                isOpen ? (
+                  <Text w={5} h={5}>
+                    X
+                  </Text>
+                ) : (
+                  <Text w={5} h={5}>
+                    #
+                  </Text>
+                )
+              }
+              variant={"ghost"}
+              aria-label={"Alternar a navegação"}
+            />
+          </Flex>
+          <Flex
+            flex={{ base: 1 }}
+            justify={{ base: "center", md: "space-between" }}
+          >
+            <Image
+              src={vector}
+              width={280}
+              height={60}
+            />
 
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-      `}</style>
+            <Flex display={{ base: "none", md: "flex" }} ml={10}>
+              <DesktopNav />
+            </Flex>
+          </Flex>
 
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
-}
+          <Stack
+            flex={{ base: 1, md: 0 }}
+            justify={"flex-end"}
+            direction={"row"}
+            spacing={6}
+            ml={8}
+          >
+            <Button
+              display={{ base: "none", md: "inline-flex" }}
+              fontSize={"sm"}
+              fontWeight={600}
+              color={"#4F351E"}
+              bg={"#EFF1B9"}
+              href={"#"}
+              _hover={{
+                bg: "#C7CA87",
+              }}
+            >
+              CONTATO
+            </Button>
+          </Stack>
+        </Flex>
+
+        <Collapse in={isOpen} animateOpacity>
+          <MobileNav />
+        </Collapse>
+      </Box>
+
+      <Heading>trY</Heading>
+    </>
+  );
+};
+
+const DesktopNav = () => {
+  const linkColor = "#4F351E";
+
+  return (
+    <Stack direction={"row"} spacing={6}>
+      {NAV_ITEMS.map((navItem) => (
+        <Box
+          key={navItem.label}
+          display={"flex"}
+          alignItems={'center'}
+          justifyContent={'center'}
+          
+          border={3}
+          borderBottomStyle={"solid"}
+          borderColor={"transparent"}
+          _hover={{
+            border: 3,
+            borderBottomStyle: "solid",
+            borderColor: "#EFF1B9",
+          }}
+        >
+          <Popover trigger={"hover"} placement={"bottom-start"}>
+            <PopoverTrigger>
+              <Link
+                m={5}
+                href={navItem.href ?? "#"}
+                fontSize={"sm"}
+                fontWeight={500}
+                color={linkColor}
+                _hover={{
+                  textDecoration: "none",
+                }}
+              >
+                {navItem.label}
+              </Link>
+            </PopoverTrigger>
+          </Popover>
+        </Box>
+      ))}
+    </Stack>
+  );
+};
+
+
+const MobileNav = () => {
+  return (
+    <Stack
+      bg={useColorModeValue("white", "gray.800")}
+      p={4}
+      display={{ md: "none" }}
+    >
+      {NAV_ITEMS.map((navItem) => (
+        <MobileNavItem key={navItem.label} {...navItem} />
+      ))}
+    </Stack>
+  );
+};
+
+const MobileNavItem = ({ label, children, href }) => {
+  const { isOpen, onToggle } = useDisclosure();
+
+  return (
+    <Stack spacing={4} onClick={children && onToggle}>
+      <Flex
+        py={2}
+        as={Link}
+        href={href ?? "#"}
+        justify={"space-between"}
+        align={"center"}
+        _hover={{
+          textDecoration: "none",
+        }}
+      >
+        <Text
+          fontWeight={600}
+          color={useColorModeValue("#4F351E", "gray.200")}
+        >
+          {label}
+        </Text>
+      </Flex>
+    </Stack>
+  );
+};
+
+const NAV_ITEMS = [
+  {
+    label: "INICIO",
+    href: "#",
+  },
+  {
+    label: "SOBRE MIM",
+    href: "#",
+  },
+  {
+    label: "COACH&FILOSOFIA CLÍNICA",
+    href: "#",
+  },
+];
+
+export default HOME;
