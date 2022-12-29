@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import {
+  Avatar,
   Box,
   Flex,
   Text,
@@ -31,10 +32,9 @@ function Menu() {
         color={"#4F351E"}
         minH={"60px"}
         py={{ base: 2 }}
-        
+        px={{ base: 4 }}
         align={"center"}
-        mt={8}
-        mb={8}
+        m={8}
       >
         <Flex
           flex={{ base: 1, md: "auto" }}
@@ -63,7 +63,7 @@ function Menu() {
           justify={{ base: "center", md: "space-between" }}
         >
           <Image src="./Vector.svg" />
-          <Flex display={{ base: "none", md: "flex" }}>
+          <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
         </Flex>
@@ -72,6 +72,7 @@ function Menu() {
           flex={{ base: 1, md: 0 }}
           justify={"flex-end"}
           direction={"row"}
+          spacing={6}
           ml={8}
         >
           <Button
@@ -99,15 +100,13 @@ function Menu() {
 
 function Hero() {
   return (
-    <Stack direction={{ base: "column", md: "row" }}>
-      <Flex p={8} flex={1} align={"center"} justify={"left"}>
+    <Stack id="inicio" minH={"100vh"} direction={{ base: "column", md: "row" }}>
+      <Flex p={8} m={4} flex={1} align={"center"} justify={"left"}>
         <Stack spacing={8} w={"full"} maxW={"lg"}>
-          <Heading
-            fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
-          >
+          <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
             <Text as={"span"} position={"relative"} color={"#4F351E"}>
               filosofia clínica e <br />
-              coach de vida
+              coach pessoal
             </Text>
             <br />{" "}
             <Text
@@ -154,18 +153,128 @@ function Hero() {
   );
 }
 
+function AboutMe() {
+  return (
+    <Stack
+      id="sobre"
+      minH={"100vh"}
+      bg={useColorModeValue("gray.50", "gray.800")}
+      pt={24}
+      px={8}
+      spacing={{ base: 8, md: 10 }}
+      align={"center"}
+      direction={"column"}
+    >
+      <Text
+        fontSize={{ base: "xl", md: "2xl" }}
+        textAlign={"justify"}
+        maxW={"3xl"}
+        as="cite"
+      >
+        Formado em Direito com especialização em <b>Filosofia e Sociologia</b>{" "}
+        pela Estácio de Sá e em <b>Filosofia Clínica certificado B </b> e em
+        fase de estágio para o <b>certificado A </b> através do{" "}
+        <b>Instituto Packter</b>, descobri através dessas áreas o quanto esse
+        conhecimento poderia me ajudar e me transformar como pessoa e através da
+        Filosofia Clínica o quanto eu poderia ajudar outras pessoas.
+        <br />
+        <b>
+          Percebi que a busca pelas ideias e do conhecimento não precisa
+          acontecer apenas no âmbito intelectual, ela pode ser externalizada
+          através de nossas ações e dos nossos hábitos e para isso é necessário
+          respeitar a nossa singularidade e a singularidade do próximo.
+        </b>
+        <br />
+        Esse entendimento fez de mim uma pessoa em constante evolução para
+        buscar ser sempre uma pessoa melhor e isso é algo que quero ajudar as
+        pessoas a atingirem. Sempre disse que gostaria de usar a filosofia para
+        ajudar as pessoas a serem suas melhores versões e esse é meu objetivo,
+        ajudar pessoas.
+      </Text>
+      <Box textAlign={"center"}>
+        <Avatar
+          src={
+            "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
+          }
+          alt={"IVAN ZANET MANGILI"}
+          mb={2}
+        />
+
+        <Text fontWeight={600}>IVAN ZANET MANGILI</Text>
+        <Text fontSize={"sm"} color={useColorModeValue("gray.400", "gray.400")}>
+          Coach Pessoal
+        </Text>
+      </Box>
+    </Stack>
+  );
+}
+
+function CoachContext() {
+  return (
+    <Stack id="coach" minH={"100vh"} direction={{ base: "column", md: "row" }}>
+      <Flex p={8} m={4} flex={1} align={"center"} justify={"center"}>
+        <Stack spacing={8} w={"full"} maxW={"lg"}>
+          <Heading fontSize={{ base: "3xl", md: "4xl" }}>
+            <Text as={"span"} position={"relative"} color={"#4F351E"}>
+              Coach
+            </Text>
+          </Heading>
+          <Text
+            fontSize={{ base: "md", lg: "lg" }}
+            color={"#1E1E1E"}
+            textAlign={"justify"}
+            as="p"
+            textIndent={20}
+          >
+            <p>
+              O Coach age como uma ponte entre a pessoa e as ferramentas a sua
+              disposição com o objetivo de facilitar, através de um método, na
+              descoberta e melhoria do cliente para que ele atinja seu objetivo,
+              que podem ser diversos.
+            </p>
+            <br />
+            <p>
+              O método que eu utilizo une os conhecimentos pertinentes da
+              Filosofia Clínica com a metodologia do Coach, o que faz isso algo
+              único. Procuro ajudar a pessoa pela pessoa, ou seja, você já tem
+              todas as ferramentas para conseguir atingir o seu objetivo, cabe a
+              mim ajudar a mostrar o caminho e mostrar para você quais são elas,
+              respeitando sempre o cliente e sua singularidade existencial.
+            </p>
+            <br />
+            <p>
+              Não existe fórmula mágica universal, o que existe é uma proposta
+              de entendimento e compreensão que irá se aplicar somente ao
+              cliente.
+            </p>
+            <br />
+            <b>Lembre-se</b>: Coach não é terapia, é uma ferramenta para ajudar
+            com problemas pontuais.
+          </Text>
+        </Stack>
+      </Flex>
+      <Flex flex={1}>
+        <Image
+          alt={"Imagem de duas pessoas se ajudando a subir em uma pedra"}
+          objectFit={"cover"}
+          src={"./vyba4i0R_2x.jpg"}
+        />
+      </Flex>
+    </Stack>
+  );
+}
+
 const HOME = () => {
   return (
     <>
       <Head>
         <title>Ivan Za</title>
       </Head>
-      <Box margin={150} marginTop={0}>
-        <Menu />
-        <Hero />
-      </Box>
 
-      <Heading>trY</Heading>
+      <Menu />
+      <Hero />
+      <AboutMe />
+      <CoachContext />
     </>
   );
 };
@@ -252,15 +361,15 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
   {
     label: "INICIO",
-    href: "#",
+    href: "#inicio",
   },
   {
     label: "SOBRE MIM",
-    href: "#",
+    href: "#sobre",
   },
   {
     label: "COACH&FILOSOFIA CLÍNICA",
-    href: "#",
+    href: "#coach",
   },
 ];
 
