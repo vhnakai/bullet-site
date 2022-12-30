@@ -414,7 +414,9 @@ function ContactForm() {
           p={{ sm: 5, md: 5, lg: 16 }}
         >
           <Box p={4} mt="10vh">
+
             <Wrap spacing={{ base: 20, sm: 16, md: 8, lg: 20 }} align={"center"} justify={'center'}>
+            <form id="fs-frm" name="simple-contact-form" acceptCharset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
               <WrapItem>
                 <Box>
                   <Heading>Contato</Heading>
@@ -423,7 +425,8 @@ function ContactForm() {
                   </Text>
 
                   <VStack spacing={5} mt="5">
-                    <FormControl id="name">
+                 
+                    <FormControl id="name" isRequired>
                       <FormLabel>Nome Completo</FormLabel>
                       <InputGroup borderColor="#4F351E">
                         <InputLeftElement
@@ -440,10 +443,12 @@ function ContactForm() {
                           _placeholder={{
                             color: "#585A19",
                           }}
+                          
+                          name="name" id="full-name"
                         />
                       </InputGroup>
                     </FormControl>
-                    <FormControl id="email">
+                    <FormControl id="email" isRequired>
                       <FormLabel>E-Mail</FormLabel>
                       <InputGroup borderColor="#4F351E">
                         <InputLeftElement
@@ -460,10 +465,12 @@ function ContactForm() {
                           _placeholder={{
                             color: "#585A19",
                           }}
+                          name="_replyto" id="email-address"
+                          
                         />
                       </InputGroup>
                     </FormControl>
-                    <FormControl id="telefone">
+                    <FormControl id="telefone" isRequired>
                       <FormLabel>Telefone</FormLabel>
                       <InputGroup borderColor="#4F351E">
                         <InputLeftElement
@@ -480,13 +487,14 @@ function ContactForm() {
                           _placeholder={{
                             color: "#585A19",
                           }}
+                          name="tel" id="tel"
                         />
                       </InputGroup>
                     </FormControl>
 
-                    <FormControl id="Opcoes">
+                    <FormControl id="Opcoes" isRequired>
                       <FormLabel>Para qual finalidade de serviço:</FormLabel>
-                      <RadioGroup>
+                      <RadioGroup name="service" id="service">
                         <Stack spacing={5} direction="row">
                           <Radio
                             borderColor={"#4F351E"}
@@ -507,7 +515,7 @@ function ContactForm() {
                         </Stack>
                       </RadioGroup>
                     </FormControl>
-                    <FormControl id="name">
+                    <FormControl id="mensagem">
                       <FormLabel>Mensagem</FormLabel>
                       <Textarea
                         borderColor="#4F351E"
@@ -518,9 +526,10 @@ function ContactForm() {
                         _placeholder={{
                           color: "#585A19",
                         }}
+                        name="message" id="message"
                       />
                     </FormControl>
-                    <FormControl id="name" float="right">
+                    <FormControl id="enviar" float="right">
                       <Button
                         variant="solid"
                         fontWeight={600}
@@ -532,13 +541,16 @@ function ContactForm() {
                         _active={{
                           bg: "#575916",
                         }}
+                        type="submit"
                       >
                         Enviar
                       </Button>
                     </FormControl>
+                    
                   </VStack>
                 </Box>
               </WrapItem>
+              </form>
               <WrapItem>
                 <Box bg="white" borderRadius="lg">
                   <Box m={8} color="#0B0E3F">
