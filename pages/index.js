@@ -109,7 +109,11 @@ function Menu() {
           justify={{ base: "center", md: "space-between" }}
         >
           <a href="#inicio">
-            <Image alt="Logo: Ivan Zanet Mangili - Coach Pessoal" minW={{ base: "270px", md: "250px" }} src="./Vector.svg" />
+            <Image
+              alt="Logo: Ivan Zanet Mangili - Coach Pessoal"
+              minW={{ base: "270px", md: "250px" }}
+              src="./Vector.svg"
+            />
           </a>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
@@ -410,7 +414,7 @@ function ContactForm() {
           p={{ sm: 5, md: 5, lg: 16 }}
         >
           <Box p={4} mt="10vh">
-            <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
+            <Wrap spacing={{ base: 20, sm: 16, md: 8, lg: 20 }} align={"center"} justify={'center'}>
               <WrapItem>
                 <Box>
                   <Heading>Contato</Heading>
@@ -536,7 +540,7 @@ function ContactForm() {
                 </Box>
               </WrapItem>
               <WrapItem>
-                <Box bg="white" borderRadius="lg" alignSelf="center">
+                <Box bg="white" borderRadius="lg">
                   <Box m={8} color="#0B0E3F">
                     <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
                       <VStack pl={0} spacing={3} alignItems="flex-start">
@@ -618,7 +622,10 @@ function Footer() {
         <SimpleGrid templateColumns={{ sm: "1fr", md: "2fr 3fr" }} spacing={8}>
           <Stack spacing={6}>
             <Flex alignSelf={{ base: "center", md: "start" }}>
-              <Image src="./whitelogo.svg" alt="Logo: Ivan Zanet Mangili - Coach Pessoal"/>{" "}
+              <Image
+                src="./whitelogo.svg"
+                alt="Logo: Ivan Zanet Mangili - Coach Pessoal"
+              />{" "}
             </Flex>
           </Stack>
 
