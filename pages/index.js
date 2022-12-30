@@ -21,16 +21,52 @@ import {
   useDisclosure,
   Heading,
   Image,
+  VStack,
+  HStack,
+  Wrap,
+  WrapItem,
+  FormControl,
+  FormLabel,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Textarea,
+  RadioGroup,
+  Radio,
 } from "@chakra-ui/react";
 
-//const vector = () => <Image src={"./Vector.svg"} width={280} height={60} />;
+import {
+  MdPhone,
+  MdEmail,
+  MdLocationOn,
+  MdFacebook,
+  MdOutlineEmail,
+  MdOutlineCall,
+} from "react-icons/md";
+import { BsGithub, BsDiscord, BsPerson, BsWhatsapp, BsInstagram } from "react-icons/bs";
+
+const HOME = () => {
+  return (
+    <>
+      <Head>
+        <title>Ivan Za</title>
+      </Head>
+
+      <Menu />
+      <Hero />
+      <AboutMe />
+      <CoachContext />
+      <FilosofiaContext />
+      <ContactForm />
+      <Footer />
+    </>
+  );
+};
 
 function Menu() {
   const { isOpen, onToggle } = useDisclosure();
   return (
-    <Box 
-    position={"fixed"}
-    zIndex={100}>
+    <Box position={"fixed"} zIndex={100}>
       <Flex
         bg={"white"}
         color={"#4F351E"}
@@ -59,10 +95,10 @@ function Menu() {
             }
             bg={"#fff"}
             _hover={{
-              bg: "#EFF1B9"
+              bg: "#EFF1B9",
             }}
             _active={{
-              bg: "#EFF1B9"
+              bg: "#EFF1B9",
             }}
             aria-label={"Alternar a navegação"}
           />
@@ -85,14 +121,18 @@ function Menu() {
           ml={5}
         >
           <Button
+          as={'a'}
             display={{ base: "none", lg: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
             color={"#4F351E"}
             bg={"#EFF1B9"}
-            href={"#"}
+            href={"#contato"}
             _hover={{
               bg: "#C7CA87",
+            }}
+            _active={{
+              bg: "#CDD077"
             }}
           >
             CONTATO
@@ -110,9 +150,9 @@ function Menu() {
 function Hero() {
   return (
     <Stack id="inicio" minH={"100vh"} direction={{ base: "column", md: "row" }}>
-      <Flex p={8} m={4} flex={1} align={"center"} justify={"left"} >
+      <Flex p={8} m={4} flex={1} align={"center"} justify={"left"}>
         <Stack spacing={8} w={"full"} maxW={"lg"}>
-          <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
+          <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} mt={{base: "10vh"}}>
             <Text as={"span"} position={"relative"} color={"#4F351E"}>
               filosofia clínica e <br />
               coach pessoal
@@ -341,19 +381,212 @@ function FilosofiaContext() {
   );
 }
 
-const ListHeader = ({ children }) => {
+function ContactForm() {
   return (
-    <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
-      {children}
-    </Text>
+    <Container id="contato"  bg="#EFF1B9" maxW="full" centerContent minH={"100vh"} >
+      <Flex>
+        <Box
+          bg="#EFF1B9"
+          color="#4F351E"
+          borderRadius="lg"
+          m={{ sm: 4, md: 16, lg: 10 }}
+          p={{ sm: 5, md: 5, lg: 16 }}
+        >
+          <Box p={4} mt="10vh">
+            <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
+              <WrapItem>
+                <Box>
+                  <Heading >Contato</Heading>
+                  <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.800">
+                    Preencha o formulário para entrar contato
+                  </Text>
+
+                  <VStack spacing={5} mt="5">
+                    <FormControl id="name">
+                      <FormLabel>Nome Completo</FormLabel>
+                      <InputGroup borderColor="#4F351E">
+                        <InputLeftElement
+                          pointerEvents="none"
+                          children={<BsPerson color="#4F351E" />}
+                        />
+                        <Input
+                          type="text"
+                          size="md"
+                          placeholder="Digite seu Nome."
+                          _hover={{
+                            border: "1px solid #585A19",
+                          }}
+                          _placeholder={{
+                            color: "#585A19"
+                          }}
+                        />
+                      </InputGroup>
+                    </FormControl>
+                    <FormControl id="email">
+                      <FormLabel>E-Mail</FormLabel>
+                      <InputGroup borderColor="#4F351E">
+                        <InputLeftElement
+                          pointerEvents="none"
+                          children={<MdOutlineEmail color="#4F351E" />}
+                        />
+                        <Input
+                          type="email"
+                          size="md"
+                          placeholder="Digite seu E-mail."
+                          _hover={{
+                            border: "1px solid #585A19",
+                          }}
+                          _placeholder={{
+                            color: "#585A19"
+                          }}
+                        />
+                      </InputGroup>
+                    </FormControl>
+                    <FormControl id="telefone">
+                      <FormLabel>Telefone</FormLabel>
+                      <InputGroup borderColor="#4F351E">
+                        <InputLeftElement
+                          pointerEvents="none"
+                          children={<MdOutlineCall color="#4F351E" />}
+                        />
+                        <Input
+                          type="tel"
+                          size="md"
+                          placeholder="Digite seu número de contato."
+                          _hover={{
+                            border: "1px solid #585A19",
+                          }}
+                          _placeholder={{
+                            color: "#585A19"
+                          }}
+                        />
+                      </InputGroup>
+                    </FormControl>
+
+                    <FormControl id="Opcoes">
+                      <FormLabel>Para qual finalidade de serviço:</FormLabel>
+                      <RadioGroup  >
+                        <Stack spacing={5} direction="row">
+                          <Radio borderColor={"#4F351E"} size="md" value="Coach" colorScheme="orange" >
+                            Coach
+                          </Radio>
+                          <Radio borderColor={"#4F351E"} size="md" value="Filosofia Clinica" colorScheme="orange">
+                            Filosofia Clínica
+                          </Radio>
+                        </Stack>
+                      </RadioGroup>
+                    </FormControl>
+                    <FormControl id="name">
+                      <FormLabel>Mensagem</FormLabel>
+                      <Textarea
+                        borderColor="#4F351E"
+                        placeholder="Escreva sua mensagem"
+                        _hover={{
+                          border: "1px solid #585A19",
+                        }}
+                        _placeholder={{
+                          color: "#585A19"
+                        }}
+                      />
+                    </FormControl>
+                    <FormControl id="name" float="right">
+                      <Button
+                        variant="solid"
+                        fontWeight={600}
+                        bg={"#4F351E"}
+                        color={"white"}
+                        _hover={{
+                          bg: "#734B28",
+                        }}
+                        _active={{
+                          bg: "#575916"
+                        }}
+                      >
+                        Enviar
+                      </Button>
+                    </FormControl>
+                  </VStack>
+                </Box>
+              </WrapItem>
+              <WrapItem>
+                <Box bg="white" borderRadius="lg" alignSelf="center">
+                  <Box m={8} color="#0B0E3F" >
+                    <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}  >
+                      <VStack pl={0} spacing={3} alignItems="flex-start" >
+                        <Button
+                        as={"a"}
+                          size="md"
+                          height="48px"
+                          width="200px"
+                          color="#585A19"
+                          bg="white"
+                          href="https://wa.me/+5514996294774"
+                          target="_blank"
+                          _hover={{ border: "2px solid #4F351E" }}
+                          leftIcon={<BsWhatsapp color="#585A19" size="20px" />}
+                        >
+                          (14) 99629-4774
+                        </Button>
+                        <Button
+                          size="md"
+                          height="48px"
+                          width="200px"
+                          color="#585A19"
+                          bg="white"
+                          _hover={{ border: "2px solid #4F351E" }}
+                          leftIcon={<MdEmail color="#585A19" size="20px" />}
+                        >
+                          hello@abc.com
+                        </Button>
+                        <Button
+                        as={"a"}
+                          size="md"
+                          height="48px"
+                          width="200px"
+                          color="#585A19"
+                          bg="white"
+                          target={"_blank"}
+                          _hover={{ border: "2px solid #4F351E" }}
+                          href="https://www.instagram.com/izmcoachfilosofia/"
+                          leftIcon={
+                            <BsInstagram color="#585A19" size="20px" />
+                          }
+                        >
+                          @izmcoachfilosofia
+                        </Button>
+                        <Button
+                          size="md"
+                          height="48px"
+                          width="200px"
+                          color="#585A19"
+                          bg="white"
+                          _hover={{ border: "2px solid #4F351E" }}
+                          leftIcon={
+                            <MdLocationOn color="#585A19" size="20px" />
+                          }
+                        >
+                          Barra Bonita, SP
+                        </Button>
+                      </VStack>
+                    </Box>
+                    
+                  </Box>
+                </Box>
+              </WrapItem>
+            </Wrap>
+          </Box>
+        </Box>
+      </Flex>
+    </Container>
   );
-};
+}
+
 function Footer() {
   return (
     <Flex
       bg={"#4F351E"}
       color={"#fff"}
-      minH={"90vh"}
+      minH={"10vh"}
       alignItems={"center"}
       justifyContent={"center"}
     >
@@ -407,22 +640,6 @@ function Footer() {
     </Flex>
   );
 }
-const HOME = () => {
-  return (
-    <>
-      <Head>
-        <title>Ivan Za</title>
-      </Head>
-
-      <Menu />
-      <Hero />
-      <AboutMe />
-      <CoachContext />
-      <FilosofiaContext />
-      <Footer />
-    </>
-  );
-};
 
 const DesktopNav = () => {
   const linkColor = "#4F351E";

@@ -10,11 +10,12 @@ import { theme } from "../styles/theme";
 
 class myDoc extends NextDocument {
   static getInitialProps(ctx) {
-    return NextDocument.getInitialProps(ctx);
+    return  NextDocument.getInitialProps(ctx);
+
   }
   render() {
     return (
-      <Html>
+      <Html style={{scrollBehavior:"smooth"}}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
