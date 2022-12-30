@@ -4,6 +4,8 @@ import {
   Avatar,
   Box,
   Flex,
+  Container,
+  SimpleGrid,
   Text,
   IconButton,
   Button,
@@ -201,7 +203,7 @@ function AboutMe() {
         />
 
         <Text fontWeight={600}>IVAN ZANET MANGILI</Text>
-        <Text fontSize={"sm"} color={useColorModeValue("gray.400", "gray.400")}>
+        <Text fontSize={"md"} color={useColorModeValue("gray.400", "gray.400")}>
           Coach Pessoal
         </Text>
       </Box>
@@ -331,6 +333,72 @@ function FilosofiaContext() {
   );
 }
 
+const ListHeader = ({ children }) => {
+  return (
+    <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
+      {children}
+    </Text>
+  );
+};
+function Footer() {
+  return (
+    <Flex
+      bg={"#4F351E"}
+      color={"#fff"}
+      minH={"100vh"}
+      alignItems={"center"}
+      justifyContent={"center"}
+    >
+      <Container as={Stack} maxW={"6xl"} py={10}>
+        <SimpleGrid templateColumns={{ sm: "1fr", md: "2fr 3fr" }} spacing={8}>
+          <Stack spacing={6}>
+            <Flex alignSelf={{ base: "center", md: "start" }}>
+              <Image src="./whitelogo.svg" />{" "}
+            </Flex>
+          </Stack>
+
+          <Stack direction={{ base: "column", md: "row" }} spacing={6}>
+            {NAV_ITEMS.map((navItem) => (
+              <Flex
+                key={navItem.label}
+                display={"flex"}
+                direction={{ base: "column", md: "row" }}
+                alignItems={"center"}
+                justifyContent={"center"}
+                border={3}
+                borderBottomStyle={"solid"}
+                borderColor={"transparent"}
+                _hover={{
+                  border: 3,
+                  borderBottomStyle: "solid",
+                  borderColor: "#EFF1B9",
+                }}
+              >
+                <Popover trigger={"hover"} placement={"bottom-start"}>
+                  <PopoverTrigger>
+                    <Link
+                      as="a"
+                      m={5}
+                      href={navItem.href ?? "#"}
+                      fontSize={"sm"}
+                      fontWeight={500}
+                      color={"#fff"}
+                      _hover={{
+                        textDecoration: "none",
+                      }}
+                    >
+                      {navItem.label}
+                    </Link>
+                  </PopoverTrigger>
+                </Popover>
+              </Flex>
+            ))}
+          </Stack>
+        </SimpleGrid>
+      </Container>
+    </Flex>
+  );
+}
 const HOME = () => {
   return (
     <>
@@ -343,6 +411,7 @@ const HOME = () => {
       <AboutMe />
       <CoachContext />
       <FilosofiaContext />
+      <Footer />
     </>
   );
 };
@@ -370,7 +439,7 @@ const DesktopNav = () => {
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link
-                as='a'
+                as="a"
                 m={5}
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}
