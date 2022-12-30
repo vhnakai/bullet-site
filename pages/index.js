@@ -42,8 +42,17 @@ import {
   MdFacebook,
   MdOutlineEmail,
   MdOutlineCall,
+  MdClose,
 } from "react-icons/md";
-import { BsGithub, BsDiscord, BsPerson, BsWhatsapp, BsInstagram } from "react-icons/bs";
+import {
+  BsGithub,
+  BsDiscord,
+  BsPerson,
+  BsWhatsapp,
+  BsInstagram,
+} from "react-icons/bs";
+
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const HOME = () => {
   return (
@@ -83,15 +92,7 @@ function Menu() {
           <IconButton
             onClick={onToggle}
             icon={
-              isOpen ? (
-                <Text w={5} h={5}>
-                  X
-                </Text>
-              ) : (
-                <Text w={5} h={5}>
-                  #
-                </Text>
-              )
+              isOpen ? <MdClose w={5} h={5} /> : <GiHamburgerMenu w={5} h={5} />
             }
             bg={"#fff"}
             _hover={{
@@ -107,7 +108,9 @@ function Menu() {
           flex={{ base: 1 }}
           justify={{ base: "center", md: "space-between" }}
         >
-          <Image src="./Vector.svg" />
+          <a href="#inicio">
+            <Image minW={{ base: "270px", md: "250px" }} src="./Vector.svg" />
+          </a>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
@@ -121,7 +124,7 @@ function Menu() {
           ml={5}
         >
           <Button
-          as={'a'}
+            as={"a"}
             display={{ base: "none", lg: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
@@ -132,7 +135,7 @@ function Menu() {
               bg: "#C7CA87",
             }}
             _active={{
-              bg: "#CDD077"
+              bg: "#CDD077",
             }}
           >
             CONTATO
@@ -152,7 +155,10 @@ function Hero() {
     <Stack id="inicio" minH={"100vh"} direction={{ base: "column", md: "row" }}>
       <Flex p={8} m={4} flex={1} align={"center"} justify={"left"}>
         <Stack spacing={8} w={"full"} maxW={"lg"}>
-          <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} mt={{base: "10vh"}}>
+          <Heading
+            fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
+            mt={{ base: "10vh" }}
+          >
             <Text as={"span"} position={"relative"} color={"#4F351E"}>
               filosofia clínica e <br />
               coach pessoal
@@ -177,13 +183,17 @@ function Hero() {
           </Text>
           <Stack direction={{ base: "column", md: "row" }}>
             <Button
+            as={"a"}
+            href="#contato"
               mt={8}
-              href={"#"}
               fontWeight={600}
               bg={"#4F351E"}
               color={"white"}
               _hover={{
                 bg: "#734B28",
+              }}
+              _active={{
+                bg: "#575916",
               }}
             >
               MARQUE UMA SESSÃO
@@ -329,11 +339,12 @@ function FilosofiaContext() {
       minH={"100vh"}
       direction={{ base: "column", md: "row" }}
     >
-      <Flex flex={1}>
+      <Flex flex={1} display={{base: "none", md: "flex"}}>
         <Image
           alt={"estatua de Dante Alighieri, filosofo italiano."}
           objectFit={"cover"}
           src={"./rHOEmsbV_2x.jpg"}
+          display={{base: "none", md: "block"}}
         />
       </Flex>
       <Flex p={8} m={4} flex={1} align={"center"} justify={"center"} mt="10vh">
@@ -383,7 +394,13 @@ function FilosofiaContext() {
 
 function ContactForm() {
   return (
-    <Container id="contato"  bg="#EFF1B9" maxW="full" centerContent minH={"100vh"} >
+    <Container
+      id="contato"
+      bg="#EFF1B9"
+      maxW="full"
+      centerContent
+      minH={"100vh"}
+    >
       <Flex>
         <Box
           bg="#EFF1B9"
@@ -396,7 +413,7 @@ function ContactForm() {
             <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
               <WrapItem>
                 <Box>
-                  <Heading >Contato</Heading>
+                  <Heading>Contato</Heading>
                   <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.800">
                     Preencha o formulário para entrar contato
                   </Text>
@@ -417,7 +434,7 @@ function ContactForm() {
                             border: "1px solid #585A19",
                           }}
                           _placeholder={{
-                            color: "#585A19"
+                            color: "#585A19",
                           }}
                         />
                       </InputGroup>
@@ -437,7 +454,7 @@ function ContactForm() {
                             border: "1px solid #585A19",
                           }}
                           _placeholder={{
-                            color: "#585A19"
+                            color: "#585A19",
                           }}
                         />
                       </InputGroup>
@@ -457,7 +474,7 @@ function ContactForm() {
                             border: "1px solid #585A19",
                           }}
                           _placeholder={{
-                            color: "#585A19"
+                            color: "#585A19",
                           }}
                         />
                       </InputGroup>
@@ -465,12 +482,22 @@ function ContactForm() {
 
                     <FormControl id="Opcoes">
                       <FormLabel>Para qual finalidade de serviço:</FormLabel>
-                      <RadioGroup  >
+                      <RadioGroup>
                         <Stack spacing={5} direction="row">
-                          <Radio borderColor={"#4F351E"} size="md" value="Coach" colorScheme="orange" >
+                          <Radio
+                            borderColor={"#4F351E"}
+                            size="md"
+                            value="Coach"
+                            colorScheme="orange"
+                          >
                             Coach
                           </Radio>
-                          <Radio borderColor={"#4F351E"} size="md" value="Filosofia Clinica" colorScheme="orange">
+                          <Radio
+                            borderColor={"#4F351E"}
+                            size="md"
+                            value="Filosofia Clinica"
+                            colorScheme="orange"
+                          >
                             Filosofia Clínica
                           </Radio>
                         </Stack>
@@ -485,7 +512,7 @@ function ContactForm() {
                           border: "1px solid #585A19",
                         }}
                         _placeholder={{
-                          color: "#585A19"
+                          color: "#585A19",
                         }}
                       />
                     </FormControl>
@@ -499,7 +526,7 @@ function ContactForm() {
                           bg: "#734B28",
                         }}
                         _active={{
-                          bg: "#575916"
+                          bg: "#575916",
                         }}
                       >
                         Enviar
@@ -510,11 +537,11 @@ function ContactForm() {
               </WrapItem>
               <WrapItem>
                 <Box bg="white" borderRadius="lg" alignSelf="center">
-                  <Box m={8} color="#0B0E3F" >
-                    <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}  >
-                      <VStack pl={0} spacing={3} alignItems="flex-start" >
+                  <Box m={8} color="#0B0E3F">
+                    <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
+                      <VStack pl={0} spacing={3} alignItems="flex-start">
                         <Button
-                        as={"a"}
+                          as={"a"}
                           size="md"
                           height="48px"
                           width="200px"
@@ -539,7 +566,7 @@ function ContactForm() {
                           hello@abc.com
                         </Button>
                         <Button
-                        as={"a"}
+                          as={"a"}
                           size="md"
                           height="48px"
                           width="200px"
@@ -548,9 +575,7 @@ function ContactForm() {
                           target={"_blank"}
                           _hover={{ border: "2px solid #4F351E" }}
                           href="https://www.instagram.com/izmcoachfilosofia/"
-                          leftIcon={
-                            <BsInstagram color="#585A19" size="20px" />
-                          }
+                          leftIcon={<BsInstagram color="#585A19" size="20px" />}
                         >
                           @izmcoachfilosofia
                         </Button>
@@ -569,7 +594,6 @@ function ContactForm() {
                         </Button>
                       </VStack>
                     </Box>
-                    
                   </Box>
                 </Box>
               </WrapItem>
