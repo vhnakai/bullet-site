@@ -53,6 +53,7 @@ import {
 } from "react-icons/bs";
 
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
 
 const HOME = () => {
   return (
@@ -182,8 +183,8 @@ function Hero() {
             color={"#1E1E1E"}
             textAlign={"justify"}
           >
-            Um resumo de duas linhas falando de forma generalista o que você
-            oferece (sem ser o seu corpo).
+            Um atendimento de forma única e singular com respeito a
+            singularidade existencial de cada pessoa.
           </Text>
           <Stack direction={{ base: "column", md: "row" }}>
             <Button
@@ -397,6 +398,31 @@ function FilosofiaContext() {
 }
 
 function ContactForm() {
+  /*const paraQndoOBalaForRico = (
+    <FormControl id="Opcoes" isRequired>
+      <FormLabel>Para qual finalidade de serviço:</FormLabel>
+      <RadioGroup name="service" id="service">
+        <Stack spacing={5} direction="row">
+          <Radio
+            borderColor={"#4F351E"}
+            size="md"
+            value="Coach"
+            colorScheme="orange"
+          >
+            Coach
+          </Radio>
+          <Radio
+            borderColor={"#4F351E"}
+            size="md"
+            value="Filosofia Clinica"
+            colorScheme="orange"
+          >
+            Filosofia Clínica
+          </Radio>
+        </Stack>
+      </RadioGroup>
+    </FormControl>)*/
+
   return (
     <Container
       id="contato"
@@ -414,142 +440,134 @@ function ContactForm() {
           p={{ sm: 5, md: 5, lg: 16 }}
         >
           <Box p={4} mt="10vh">
+            <Wrap
+              spacing={{ base: 20, sm: 16, md: 8, lg: 20 }}
+              align={"center"}
+              justify={"center"}
+            >
+              <form
+                id="fs-frm"
+                name="simple-contact-form"
+                acceptCharset="utf-8"
+                action="https://formspree.io/f/mqkokzlg"
+                method="post"
+              >
+                <WrapItem>
+                  <Box>
+                    <Heading>Contato</Heading>
+                    <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.800">
+                      Preencha o formulário para entrar em contato
+                    </Text>
 
-            <Wrap spacing={{ base: 20, sm: 16, md: 8, lg: 20 }} align={"center"} justify={'center'}>
-            <form id="fs-frm" name="simple-contact-form" acceptCharset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
-              <WrapItem>
-                <Box>
-                  <Heading>Contato</Heading>
-                  <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.800">
-                    Preencha o formulário para entrar contato
-                  </Text>
-
-                  <VStack spacing={5} mt="5">
-                 
-                    <FormControl id="name" isRequired>
-                      <FormLabel>Nome Completo</FormLabel>
-                      <InputGroup borderColor="#4F351E">
-                        <InputLeftElement
-                          pointerEvents="none"
-                          children={<BsPerson color="#4F351E" />}
-                        />
-                        <Input
-                          type="text"
-                          size="md"
-                          placeholder="Digite seu Nome."
-                          _hover={{
-                            border: "1px solid #585A19",
-                          }}
-                          _placeholder={{
-                            color: "#585A19",
-                          }}
-                          
-                          name="name" id="full-name"
-                        />
-                      </InputGroup>
-                    </FormControl>
-                    <FormControl id="email" isRequired>
-                      <FormLabel>E-Mail</FormLabel>
-                      <InputGroup borderColor="#4F351E">
-                        <InputLeftElement
-                          pointerEvents="none"
-                          children={<MdOutlineEmail color="#4F351E" />}
-                        />
-                        <Input
-                          type="email"
-                          size="md"
-                          placeholder="Digite seu E-mail."
-                          _hover={{
-                            border: "1px solid #585A19",
-                          }}
-                          _placeholder={{
-                            color: "#585A19",
-                          }}
-                          name="_replyto" id="email-address"
-                          
-                        />
-                      </InputGroup>
-                    </FormControl>
-                    <FormControl id="telefone" isRequired>
-                      <FormLabel>Telefone</FormLabel>
-                      <InputGroup borderColor="#4F351E">
-                        <InputLeftElement
-                          pointerEvents="none"
-                          children={<MdOutlineCall color="#4F351E" />}
-                        />
-                        <Input
-                          type="tel"
-                          size="md"
-                          placeholder="Digite seu número de contato."
-                          _hover={{
-                            border: "1px solid #585A19",
-                          }}
-                          _placeholder={{
-                            color: "#585A19",
-                          }}
-                          name="tel" id="tel"
-                        />
-                      </InputGroup>
-                    </FormControl>
-
-                    <FormControl id="Opcoes" isRequired>
-                      <FormLabel>Para qual finalidade de serviço:</FormLabel>
-                      <RadioGroup name="service" id="service">
-                        <Stack spacing={5} direction="row">
-                          <Radio
-                            borderColor={"#4F351E"}
+                    <VStack spacing={5} mt="5">
+                      <FormControl id="name" isRequired>
+                        <FormLabel>Nome Completo</FormLabel>
+                        <InputGroup borderColor="#4F351E">
+                          <InputLeftElement
+                            pointerEvents="none"
+                            children={<BsPerson color="#4F351E" />}
+                          />
+                          <Input
+                            type="text"
                             size="md"
-                            value="Coach"
-                            colorScheme="orange"
-                          >
-                            Coach
-                          </Radio>
-                          <Radio
-                            borderColor={"#4F351E"}
+                            placeholder="Digite seu Nome."
+                            _hover={{
+                              border: "1px solid #585A19",
+                            }}
+                            _placeholder={{
+                              color: "#585A19",
+                            }}
+                            errorBorderColor="crimson"
+                            name="Nome"
+                            id="full-name"
+                          />
+                        </InputGroup>
+                      </FormControl>
+                      <FormControl id="email" isRequired>
+                        <FormLabel>E-Mail</FormLabel>
+                        <InputGroup borderColor="#4F351E">
+                          <InputLeftElement
+                            pointerEvents="none"
+                            children={<MdOutlineEmail color="#4F351E" />}
+                          />
+                          <Input
+                            type="email"
                             size="md"
-                            value="Filosofia Clinica"
-                            colorScheme="orange"
-                          >
-                            Filosofia Clínica
-                          </Radio>
-                        </Stack>
-                      </RadioGroup>
-                    </FormControl>
-                    <FormControl id="mensagem">
-                      <FormLabel>Mensagem</FormLabel>
-                      <Textarea
-                        borderColor="#4F351E"
-                        placeholder="Escreva sua mensagem"
-                        _hover={{
-                          border: "1px solid #585A19",
-                        }}
-                        _placeholder={{
-                          color: "#585A19",
-                        }}
-                        name="message" id="message"
-                      />
-                    </FormControl>
-                    <FormControl id="enviar" float="right">
-                      <Button
-                        variant="solid"
-                        fontWeight={600}
-                        bg={"#4F351E"}
-                        color={"white"}
-                        _hover={{
-                          bg: "#734B28",
-                        }}
-                        _active={{
-                          bg: "#575916",
-                        }}
-                        type="submit"
-                      >
-                        Enviar
-                      </Button>
-                    </FormControl>
-                    
-                  </VStack>
-                </Box>
-              </WrapItem>
+                            placeholder="Digite seu E-mail."
+                            _hover={{
+                              border: "1px solid #585A19",
+                            }}
+                            _placeholder={{
+                              color: "#585A19",
+                            }}
+                            name="Email"
+                            id="email-address"
+                            errorBorderColor="crimson"
+                          />
+                        </InputGroup>
+                      </FormControl>
+                      <FormControl id="telefone" isRequired>
+                        <FormLabel>Telefone</FormLabel>
+                        <InputGroup borderColor="#4F351E">
+                          <InputLeftElement
+                            pointerEvents="none"
+                            children={<MdOutlineCall color="#4F351E" />}
+                          />
+
+                          <Input
+                            type="tel"
+                            pattern="^\s*(\d{2}|\d{0})[-. ]?(\d{5}|\d{4})[-. ]?(\d{4})[-. ]?\s*$"
+                            errorBorderColor="crimson"
+                            size="md"
+                            placeholder="Digite seu número de contato."
+                            _hover={{
+                              border: "1px solid #585A19",
+                            }}
+                            _placeholder={{
+                              color: "#585A19",
+                            }}
+                            name="Telefone"
+                            id="tel"
+                            maxLength={15}
+                          />
+                        </InputGroup>
+                      </FormControl>
+
+                      <FormControl id="mensagem">
+                        <FormLabel>Mensagem</FormLabel>
+                        <Textarea
+                          borderColor="#4F351E"
+                          placeholder="Escreva sua mensagem"
+                          _hover={{
+                            border: "1px solid #585A19",
+                          }}
+                          _placeholder={{
+                            color: "#585A19",
+                          }}
+                          name="Mensagem"
+                          id="message"
+                        />
+                      </FormControl>
+                      <FormControl id="enviar" float="right">
+                        <Button
+                          variant="solid"
+                          fontWeight={600}
+                          bg={"#4F351E"}
+                          color={"white"}
+                          _hover={{
+                            bg: "#734B28",
+                          }}
+                          _active={{
+                            bg: "#575916",
+                          }}
+                          type="submit"
+                        >
+                          Enviar
+                        </Button>
+                      </FormControl>
+                    </VStack>
+                  </Box>
+                </WrapItem>
               </form>
               <WrapItem>
                 <Box bg="white" borderRadius="lg">
@@ -579,7 +597,7 @@ function ContactForm() {
                           _hover={{ border: "2px solid #4F351E" }}
                           leftIcon={<MdEmail color="#585A19" size="20px" />}
                         >
-                          hello@abc.com
+                          izmcoachfilosofia@gmail.com
                         </Button>
                         <Button
                           as={"a"}
