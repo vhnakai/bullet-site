@@ -28,15 +28,16 @@ import {
 function Menu() {
   const { isOpen, onToggle } = useDisclosure();
   return (
-    <Box mt={8}>
+    <Box 
+    position={"fixed"}
+    zIndex={100}>
       <Flex
         bg={"white"}
         color={"#4F351E"}
-        minH={"60px"}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
+        minW={"100vw"}
+        minH={"10vh"}
         align={"center"}
-        m={8}
+        p={10}
       >
         <Flex
           flex={{ base: 1, md: "auto" }}
@@ -56,7 +57,13 @@ function Menu() {
                 </Text>
               )
             }
-            variant={"ghost"}
+            bg={"#fff"}
+            _hover={{
+              bg: "#EFF1B9"
+            }}
+            _active={{
+              bg: "#EFF1B9"
+            }}
             aria-label={"Alternar a navegação"}
           />
         </Flex>
@@ -74,11 +81,11 @@ function Menu() {
           flex={{ base: 1, md: 0 }}
           justify={"flex-end"}
           direction={"row"}
-          spacing={6}
-          ml={8}
+          spacing={4}
+          ml={5}
         >
           <Button
-            display={{ base: "none", md: "inline-flex" }}
+            display={{ base: "none", lg: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
             color={"#4F351E"}
@@ -103,7 +110,7 @@ function Menu() {
 function Hero() {
   return (
     <Stack id="inicio" minH={"100vh"} direction={{ base: "column", md: "row" }}>
-      <Flex p={8} m={4} flex={1} align={"center"} justify={"left"}>
+      <Flex p={8} m={4} flex={1} align={"center"} justify={"left"} >
         <Stack spacing={8} w={"full"} maxW={"lg"}>
           <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
             <Text as={"span"} position={"relative"} color={"#4F351E"}>
@@ -172,6 +179,7 @@ function AboutMe() {
         textAlign={"justify"}
         maxW={"3xl"}
         as="cite"
+        mt="10vh"
       >
         Formado em Direito com especialização em <b>Filosofia e Sociologia</b>{" "}
         pela Estácio de Sá e em <b>Filosofia Clínica certificado B </b> e em
@@ -214,7 +222,7 @@ function AboutMe() {
 function CoachContext() {
   return (
     <Stack id="coach" minH={"100vh"} direction={{ base: "column", md: "row" }}>
-      <Flex p={8} m={4} flex={1} align={"center"} justify={"center"}>
+      <Flex p={8} m={4} flex={1} align={"center"} justify={"center"} mt="10vh">
         <Stack spacing={8} w={"full"} maxW={"lg"}>
           <Heading fontSize={{ base: "3xl", md: "4xl" }}>
             <Text as={"span"} position={"relative"} color={"#4F351E"}>
@@ -288,7 +296,7 @@ function FilosofiaContext() {
           src={"./rHOEmsbV_2x.jpg"}
         />
       </Flex>
-      <Flex p={8} m={4} flex={1} align={"center"} justify={"center"}>
+      <Flex p={8} m={4} flex={1} align={"center"} justify={"center"} mt="10vh">
         <Stack spacing={8} w={"full"} maxW={"lg"}>
           <Heading fontSize={{ base: "3xl", md: "4xl" }}>
             <Text as={"span"} position={"relative"} color={"#4F351E"}>
@@ -345,7 +353,7 @@ function Footer() {
     <Flex
       bg={"#4F351E"}
       color={"#fff"}
-      minH={"100vh"}
+      minH={"90vh"}
       alignItems={"center"}
       justifyContent={"center"}
     >
@@ -462,7 +470,7 @@ const DesktopNav = () => {
 const MobileNav = () => {
   return (
     <Stack
-      bg={useColorModeValue("white", "gray.800")}
+      bg={useColorModeValue("white", "#EFF1B9")}
       p={4}
       display={{ md: "none" }}
     >
