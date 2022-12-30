@@ -109,7 +109,7 @@ function Menu() {
           justify={{ base: "center", md: "space-between" }}
         >
           <a href="#inicio">
-            <Image minW={{ base: "270px", md: "250px" }} src="./Vector.svg" />
+            <Image alt="Logo: Ivan Zanet Mangili - Coach Pessoal" minW={{ base: "270px", md: "250px" }} src="./Vector.svg" />
           </a>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
@@ -183,8 +183,8 @@ function Hero() {
           </Text>
           <Stack direction={{ base: "column", md: "row" }}>
             <Button
-            as={"a"}
-            href="#contato"
+              as={"a"}
+              href="#contato"
               mt={8}
               fontWeight={600}
               bg={"#4F351E"}
@@ -203,7 +203,7 @@ function Hero() {
       </Flex>
       <Flex flex={1}>
         <Image
-          alt={"Login Image"}
+          alt={"Imagem do livro Abolition of Man com um óculos por cima"}
           objectFit={"cover"}
           src={"./caleb-woods-iobrSsVqp28-unsplash.jpg"}
         />
@@ -256,7 +256,7 @@ function AboutMe() {
           src={
             "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
           }
-          alt={"IVAN ZANET MANGILI"}
+          alt={"Foto de Ivan Zanet Mangili"}
           mb={2}
         />
 
@@ -323,7 +323,7 @@ function CoachContext() {
       </Flex>
       <Flex flex={1}>
         <Image
-          alt={"Imagem de duas pessoas se ajudando a subir em uma pedra"}
+          alt={"Imagem de duas pessoas se ajudando para subir em uma pedra"}
           objectFit={"cover"}
           src={"./vyba4i0R_2x.jpg"}
         />
@@ -339,12 +339,12 @@ function FilosofiaContext() {
       minH={"100vh"}
       direction={{ base: "column", md: "row" }}
     >
-      <Flex flex={1} display={{base: "none", md: "flex"}}>
+      <Flex flex={1} display={{ base: "none", md: "flex" }}>
         <Image
-          alt={"estatua de Dante Alighieri, filosofo italiano."}
+          alt={"Estátua de Dante Alighieri, filósofo italiano."}
           objectFit={"cover"}
           src={"./rHOEmsbV_2x.jpg"}
-          display={{base: "none", md: "block"}}
+          display={{ base: "none", md: "block" }}
         />
       </Flex>
       <Flex p={8} m={4} flex={1} align={"center"} justify={"center"} mt="10vh">
@@ -618,7 +618,7 @@ function Footer() {
         <SimpleGrid templateColumns={{ sm: "1fr", md: "2fr 3fr" }} spacing={8}>
           <Stack spacing={6}>
             <Flex alignSelf={{ base: "center", md: "start" }}>
-              <Image src="./whitelogo.svg" />{" "}
+              <Image src="./whitelogo.svg" alt="Logo: Ivan Zanet Mangili - Coach Pessoal"/>{" "}
             </Flex>
           </Stack>
 
