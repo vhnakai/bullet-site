@@ -570,15 +570,15 @@ function ContactForm() {
                 </WrapItem>
               </form>
               <WrapItem>
-                <Box bg="white" borderRadius="lg">
+                <Box bg="white" borderRadius="lg" paddingInline={"15px"}>
                   <Box m={8} color="#0B0E3F">
-                    <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
+                    <Box py={{ base:6, sm: 6, md: 9, lg: 11 }}>
                       <VStack pl={0} spacing={3} alignItems="flex-start">
                         <Button
                           as={"a"}
                           size="md"
                           height="48px"
-                          width="200px"
+                          width="300px"
                           color="#585A19"
                           bg="white"
                           href="https://wa.me/+5514996294774"
@@ -591,7 +591,7 @@ function ContactForm() {
                         <Button
                           size="md"
                           height="48px"
-                          width="200px"
+                          width="300px"
                           color="#585A19"
                           bg="white"
                           _hover={{ border: "2px solid #4F351E" }}
@@ -603,7 +603,7 @@ function ContactForm() {
                           as={"a"}
                           size="md"
                           height="48px"
-                          width="200px"
+                          width="300px"
                           color="#585A19"
                           bg="white"
                           target={"_blank"}
@@ -616,7 +616,7 @@ function ContactForm() {
                         <Button
                           size="md"
                           height="48px"
-                          width="200px"
+                          width="300px"
                           color="#585A19"
                           bg="white"
                           _hover={{ border: "2px solid #4F351E" }}
