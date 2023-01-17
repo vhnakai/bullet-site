@@ -112,7 +112,7 @@ function Menu() {
           <a href="#inicio">
             <Image
               alt="Logo: Ivan Zanet Mangili - Coach Pessoal"
-              maxW={{ base: "270px", md: "250px" }}
+              maxW={{ base: "160px", md: "150px" }}
               src="./logo_izm.png"
             />
           </a>
