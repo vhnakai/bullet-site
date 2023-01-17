@@ -113,7 +113,7 @@ function Menu() {
             <Image
               alt="Logo: Ivan Zanet Mangili - Coach Pessoal"
               maxW={{ base: "270px", md: "250px" }}
-              src="./logo_izm.jpg"
+              src="./logo_izm.png"
             />
           </a>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
