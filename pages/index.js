@@ -176,7 +176,7 @@ function Hero() {
               fontSize={"lg"}
               fontWeight={200}
             >
-              Terapia feita com e para você
+              Terapia feita com/e para você
             </Text>{" "}
           </Heading>
           <Text
