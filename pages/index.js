@@ -176,7 +176,7 @@ function Hero() {
               fontSize={"lg"}
               fontWeight={200}
             >
-              Terapia feita com/e para você
+              Terapia feita com você e para você
             </Text>{" "}
           </Heading>
           <Text
@@ -238,10 +238,10 @@ function AboutMe() {
         mt="10vh"
       >
         Formado em Direito com especialização em <b>Filosofia e Sociologia</b>{" "}
-        pela Estácio de Sá e em <b>Filosofia Clínica certificado B </b>, em fase
-        de estágio para o<b>certificado A </b> através do{" "}
+        pela Estácio de Sá e em <b>Filosofia Clínica certificado B</b>, em fase
+        de estágio para o <b>certificado A </b> através do{" "}
         <b>Instituto Packter</b> e Formação em <b>Terapias Holística</b> através
-        da <b>IBRATH (Instituto Brasileiro de Terapias Holísticas) </b>,
+        da <b>IBRATH (Instituto Brasileiro de Terapias Holísticas)</b>,
         descobri através dessas áreas o quanto esse conhecimento poderia me
         ajudar e me transformar como pessoa e através da Filosofia Clínica e das
         Terapias Holísticas o quanto eu poderia ajudar outras pessoas.
