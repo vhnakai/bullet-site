@@ -81,9 +81,10 @@ function Menu() {
         bg={"white"}
         color={"#4F351E"}
         minW={"100vw"}
-        minH={"10vh"}
+        minH={"5vh"}
         align={"center"}
-        p={10}
+        px={10}
+        py={5}
       >
         <Flex
           flex={{ base: 1, md: "auto" }}
@@ -166,7 +167,7 @@ function Hero() {
           >
             <Text as={"span"} position={"relative"} color={"#4F351E"}>
               filosofia clínica e <br />
-              coach pessoal
+              terapia holística
             </Text>
             <br />{" "}
             <Text
@@ -175,7 +176,7 @@ function Hero() {
               fontSize={"lg"}
               fontWeight={200}
             >
-              Não sei o suficiente
+              Terapia feita com e para você
             </Text>{" "}
           </Heading>
           <Text
@@ -210,7 +211,7 @@ function Hero() {
         <Image
           alt={"Imagem do livro Abolition of Man com um óculos por cima"}
           objectFit={"cover"}
-          src={"./caleb-woods-iobrSsVqp28-unsplash.jpg"}
+          src={"./livros_portugues_concursos.jpg"}
         />
       </Flex>
     </Stack>
@@ -237,17 +238,26 @@ function AboutMe() {
         mt="10vh"
       >
         Formado em Direito com especialização em <b>Filosofia e Sociologia</b>{" "}
-        pela Estácio de Sá e em <b>Filosofia Clínica certificado B </b> e em
-        fase de estágio para o <b>certificado A </b> através do{" "}
-        <b>Instituto Packter</b>, descobri através dessas áreas o quanto esse
-        conhecimento poderia me ajudar e me transformar como pessoa e através da
-        Filosofia Clínica o quanto eu poderia ajudar outras pessoas.
-        <br />
+        pela Estácio de Sá e em <b>Filosofia Clínica certificado B </b>, em fase
+        de estágio para o<b>certificado A </b> através do{" "}
+        <b>Instituto Packter</b> e Formação em <b>Terapias Holística</b> através
+        da <b>IBRATH (Instituto Brasileiro de Terapias Holísticas) </b>,
+        descobri através dessas áreas o quanto esse conhecimento poderia me
+        ajudar e me transformar como pessoa e através da Filosofia Clínica e das
+        Terapias Holísticas o quanto eu poderia ajudar outras pessoas.
+      </Text>
+      <Text
+        fontSize={{ base: "xl", md: "2xl" }}
+        textAlign={"justify"}
+        maxW={"3xl"}
+        as="cite"
+        mt="10vh"
+      >
         <b>
           Percebi que a busca pelas ideias e do conhecimento não precisa
           acontecer apenas no âmbito intelectual, ela pode ser externalizada
           através de nossas ações e dos nossos hábitos e para isso é necessário
-          respeitar a nossa singularidade e a singularidade do próximo.
+          respeitar a nossa singularidade e a singularidade do próximo
         </b>
         <br />
         Esse entendimento fez de mim uma pessoa em constante evolução para
@@ -257,17 +267,11 @@ function AboutMe() {
         ajudar pessoas.
       </Text>
       <Box textAlign={"center"}>
-        <Avatar
-          src={
-            "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
-          }
-          alt={"Foto de Ivan Zanet Mangili"}
-          mb={2}
-        />
+        <Avatar src={"ivan.jpg"} alt={"Foto de Ivan Zanet Mangili"} mb={2} />
 
         <Text fontWeight={600}>IVAN ZANET MANGILI</Text>
         <Text fontSize={"md"} color={useColorModeValue("gray.400", "gray.400")}>
-          Coach Pessoal
+          Terapeuta
         </Text>
       </Box>
     </Stack>
@@ -281,7 +285,7 @@ function CoachContext() {
         <Stack spacing={8} w={"full"} maxW={"lg"}>
           <Heading fontSize={{ base: "3xl", md: "4xl" }}>
             <Text as={"span"} position={"relative"} color={"#4F351E"}>
-              Coach
+              TERAPIAS HOLÍSTICAS
             </Text>
           </Heading>
           <Text
@@ -291,10 +295,16 @@ function CoachContext() {
             as="p"
             textIndent={20}
           >
-            O Coach age como uma ponte entre a pessoa e as ferramentas a sua
-            disposição com o objetivo de facilitar, através de um método, na
-            descoberta e melhoria do cliente para que ele atinja seu objetivo,
-            que podem ser diversos.
+            A Terapia Holística é um conjunto de terapias que visam a promover a
+            saúde e prevenir doenças, além de trazer alívio de sintomas e cura,
+            através do cuidado integral do ser humano. Seus conceitos, em grande
+            parte, se originam das filosofias orientais e carregam em si uma
+            integração entre o conhecimento prático e científico. Tem por base,
+            principalmente, métodos de relaxamento, alívio de gatilhos,
+            manipulação de energias e mudanças nos hábitos de vida. E quando
+            unidos aos tratamentos tradicionais, se apresentam como uma
+            ferramenta de grandes benefícios e vantagens para a pessoa que o
+            procura.
           </Text>
 
           <Text
@@ -304,25 +314,12 @@ function CoachContext() {
             as="p"
             textIndent={20}
           >
-            O método que eu utilizo une os conhecimentos pertinentes da
-            Filosofia Clínica com a metodologia do Coach, o que faz isso algo
-            único. Procuro ajudar a pessoa pela pessoa, ou seja, você já tem
-            todas as ferramentas para conseguir atingir o seu objetivo, cabe a
-            mim ajudar a mostrar o caminho e mostrar para você quais são elas,
-            respeitando sempre o cliente e sua singularidade existencial. Não
-            existe fórmula mágica universal, o que existe é uma proposta de
-            entendimento e compreensão que irá se aplicar somente ao cliente.
-          </Text>
-
-          <Text
-            fontSize={{ base: "md", lg: "lg" }}
-            color={"#1E1E1E"}
-            textAlign={"justify"}
-            as="p"
-            textIndent={20}
-          >
-            <b>Lembre-se</b>: Coach não é terapia, é uma ferramenta para ajudar
-            com problemas pontuais.
+            O resultado de sua utilização junto aos tratamentos médicos
+            tradicionais é notório. Evidencia-se quando ao alcançar camadas mais
+            profundas da vida das pessoas que buscam por essa prática, aliados
+            aos meios tradicionais, promove-se de maneira mais satisfatória uma
+            resposta quanto ao bem-estar físico e mental, trazendo uma melhor
+            qualidade de vida e bem-estar a todos.
           </Text>
         </Stack>
       </Flex>
@@ -572,7 +569,7 @@ function ContactForm() {
               <WrapItem>
                 <Box bg="white" borderRadius="lg" paddingInline={"15px"}>
                   <Box m={8} color="#0B0E3F">
-                    <Box py={{ base:6, sm: 6, md: 9, lg: 11 }}>
+                    <Box py={{ base: 6, sm: 6, md: 9, lg: 11 }}>
                       <VStack pl={0} spacing={3} alignItems="flex-start">
                         <Button
                           as={"a"}
@@ -597,7 +594,7 @@ function ContactForm() {
                           _hover={{ border: "2px solid #4F351E" }}
                           leftIcon={<MdEmail color="#585A19" size="20px" />}
                         >
-                          izmcoachfilosofia@gmail.com
+                          izmterapeuta@gmail.com
                         </Button>
                         <Button
                           as={"a"}
@@ -608,10 +605,10 @@ function ContactForm() {
                           bg="white"
                           target={"_blank"}
                           _hover={{ border: "2px solid #4F351E" }}
-                          href="https://www.instagram.com/izmcoachfilosofia/"
+                          href="https://www.instagram.com/izmterapeuta/"
                           leftIcon={<BsInstagram color="#585A19" size="20px" />}
                         >
-                          @izmcoachfilosofia
+                          @izmterapeuta
                         </Button>
                         <Button
                           size="md"
@@ -642,8 +639,8 @@ function ContactForm() {
 function Footer() {
   return (
     <Flex
-      bg={"#4F351E"}
-      color={"#fff"}
+      bg={"white"}
+      color={"#4F351E"}
       minH={"10vh"}
       alignItems={"center"}
       justifyContent={"center"}
@@ -653,8 +650,9 @@ function Footer() {
           <Stack spacing={6}>
             <Flex alignSelf={{ base: "center", md: "start" }}>
               <Image
-                src="./whitelogo.svg"
-                alt="Logo: Ivan Zanet Mangili - Coach Pessoal"
+                src="./logo_izm.png"
+                alt="Logo: Ivan Zanet Mangili"
+                maxW={'250px'}
               />{" "}
             </Flex>
           </Stack>
@@ -684,7 +682,7 @@ function Footer() {
                       href={navItem.href ?? "#"}
                       fontSize={"sm"}
                       fontWeight={500}
-                      color={"#fff"}
+                      color={"#4F351E"}
                       _hover={{
                         textDecoration: "none",
                       }}
@@ -792,7 +790,7 @@ const NAV_ITEMS = [
     href: "#sobre",
   },
   {
-    label: "COACH",
+    label: "TERAPIAS HOLÍSTICAS",
     href: "#coach",
   },
   {
