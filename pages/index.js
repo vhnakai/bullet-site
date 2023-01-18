@@ -11,18 +11,14 @@ import {
   Button,
   Stack,
   Collapse,
-  Icon,
   Link,
   Popover,
   PopoverTrigger,
-  PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
   Heading,
   Image,
   VStack,
-  HStack,
   Wrap,
   WrapItem,
   FormControl,
@@ -31,35 +27,24 @@ import {
   InputGroup,
   InputLeftElement,
   Textarea,
-  RadioGroup,
-  Radio,
 } from "@chakra-ui/react";
 
 import {
-  MdPhone,
   MdEmail,
   MdLocationOn,
-  MdFacebook,
   MdOutlineEmail,
   MdOutlineCall,
   MdClose,
 } from "react-icons/md";
-import {
-  BsGithub,
-  BsDiscord,
-  BsPerson,
-  BsWhatsapp,
-  BsInstagram,
-} from "react-icons/bs";
+import { BsPerson, BsWhatsapp, BsInstagram } from "react-icons/bs";
 
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useState } from "react";
 
 const HOME = () => {
   return (
     <>
       <Head>
-        <title>Ivan Za</title>
+        <title>IZM terapeuta</title>
       </Head>
 
       <Menu />
@@ -241,10 +226,10 @@ function AboutMe() {
         pela Estácio de Sá e em <b>Filosofia Clínica certificado B</b>, em fase
         de estágio para o <b>certificado A </b> através do{" "}
         <b>Instituto Packter</b> e Formação em <b>Terapias Holística</b> através
-        da <b>IBRATH (Instituto Brasileiro de Terapias Holísticas)</b>,
-        descobri através dessas áreas o quanto esse conhecimento poderia me
-        ajudar e me transformar como pessoa e através da Filosofia Clínica e das
-        Terapias Holísticas o quanto eu poderia ajudar outras pessoas.
+        da <b>IBRATH (Instituto Brasileiro de Terapias Holísticas)</b>, descobri
+        através dessas áreas o quanto esse conhecimento poderia me ajudar e me
+        transformar como pessoa e através da Filosofia Clínica e das Terapias
+        Holísticas o quanto eu poderia ajudar outras pessoas.
       </Text>
       <Text
         fontSize={{ base: "xl", md: "2xl" }}
@@ -295,16 +280,16 @@ function CoachContext() {
             as="p"
             textIndent={20}
           >
-            A <b>Terapia Holística</b> é um conjunto de terapias que visam a promover a
-            saúde e prevenir doenças, além de trazer alívio de sintomas e cura,
-            através do cuidado integral do ser humano. Seus conceitos, em grande
-            parte, se originam das filosofias orientais e carregam em si uma
-            integração entre o conhecimento prático e científico. Tem por base,
-            principalmente, métodos de relaxamento, alívio de gatilhos,
-            manipulação de energias e mudanças nos hábitos de vida. Quando
-            unidos aos tratamentos tradicionais, se apresentam como uma
-            ferramenta de grandes benefícios e vantagens para a pessoa que o
-            procura.
+            A <b>Terapia Holística</b> é um conjunto de terapias que visam a
+            promover a saúde e prevenir doenças, além de trazer alívio de
+            sintomas e cura, através do cuidado integral do ser humano. Seus
+            conceitos, em grande parte, se originam das filosofias orientais e
+            carregam em si uma integração entre o conhecimento prático e
+            científico. Tem por base, principalmente, métodos de relaxamento,
+            alívio de gatilhos, manipulação de energias e mudanças nos hábitos
+            de vida. Quando unidos aos tratamentos tradicionais, se apresentam
+            como uma ferramenta de grandes benefícios e vantagens para a pessoa
+            que o procura.
           </Text>
 
           <Text
@@ -652,7 +637,7 @@ function Footer() {
               <Image
                 src="./logo_izm.png"
                 alt="Logo: Ivan Zanet Mangili"
-                maxW={'250px'}
+                maxW={"250px"}
               />{" "}
             </Flex>
           </Stack>
