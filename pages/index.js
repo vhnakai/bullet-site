@@ -295,7 +295,7 @@ function CoachContext() {
             as="p"
             textIndent={20}
           >
-            A Terapia Holística é um conjunto de terapias que visam a promover a
+            A <b>Terapia Holística</b> é um conjunto de terapias que visam a promover a
             saúde e prevenir doenças, além de trazer alívio de sintomas e cura,
             através do cuidado integral do ser humano. Seus conceitos, em grande
             parte, se originam das filosofias orientais e carregam em si uma
@@ -363,7 +363,7 @@ function FilosofiaContext() {
             as="p"
             textIndent={20}
           >
-            A Filosofia Clínica é uma abordagem terapêutica idealizada e
+            A <b>Filosofia Clínica</b> é uma abordagem terapêutica idealizada e
             sistematizada pelo filósofo Lúcio Packter, que faz uso dos
             conhecimentos filosóficos, ou seja, dos conhecimentos da Filosofia
             Acadêmica teórica e os guia para o seu uso na terapia prática. A
