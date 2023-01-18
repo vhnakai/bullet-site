@@ -44,7 +44,7 @@ const HOME = () => {
   return (
     <>
       <Head>
-        <title>IZM terapeuta</title>
+        <title>IZM Terapeuta</title>
       </Head>
 
       <Menu />
