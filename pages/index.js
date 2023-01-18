@@ -257,7 +257,7 @@ function AboutMe() {
           Percebi que a busca pelas ideias e do conhecimento não precisa
           acontecer apenas no âmbito intelectual, ela pode ser externalizada
           através de nossas ações e dos nossos hábitos e para isso é necessário
-          respeitar a nossa singularidade e a singularidade do próximo
+          respeitar a nossa singularidade e a singularidade do próximo.
         </b>
         <br />
         Esse entendimento fez de mim uma pessoa em constante evolução para
