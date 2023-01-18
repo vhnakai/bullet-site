@@ -301,7 +301,7 @@ function CoachContext() {
             parte, se originam das filosofias orientais e carregam em si uma
             integração entre o conhecimento prático e científico. Tem por base,
             principalmente, métodos de relaxamento, alívio de gatilhos,
-            manipulação de energias e mudanças nos hábitos de vida. E quando
+            manipulação de energias e mudanças nos hábitos de vida. Quando
             unidos aos tratamentos tradicionais, se apresentam como uma
             ferramenta de grandes benefícios e vantagens para a pessoa que o
             procura.
